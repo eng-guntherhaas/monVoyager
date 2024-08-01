@@ -4,6 +4,7 @@ import { useNavigation, useRouter } from "expo-router";
 import { Colors } from "../../../constants/Colors";
 import { TextInput } from "react-native-gesture-handler";
 import { TouchableOpacity } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function SignIn() {
   const navigation = useNavigation();
@@ -24,10 +25,14 @@ export default function SignIn() {
         height: "100%",
       }}
     >
+      <TouchableOpacity onPress={() => router.back()}>
+        <Ionicons name="arrow-back" size={24} color="black" />
+      </TouchableOpacity>
       <Text
         style={{
           fontFamily: "outfit-bold",
           fontSize: 30,
+          marginTop: 30,
         }}
       >
         Let's Sign You In
@@ -55,7 +60,7 @@ export default function SignIn() {
 
       <View
         style={{
-          marginTop: 50,
+          marginTop: 30,
         }}
       >
         <Text style={{ fontFamily: "outfit" }}>Email</Text>
